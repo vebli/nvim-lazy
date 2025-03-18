@@ -1,6 +1,7 @@
 {pkgs, pkgs-unstable, ...}: with pkgs-unstable; [
     curl #for godbolt
     fzf
+
     # LSP
     asm-lsp
     cmake-language-server

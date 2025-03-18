@@ -22,9 +22,7 @@ in
             require("options")
             require("plugins.init")
             EOF
-
             '';
-
             packages.all.start = with pkgs.vimPlugins; [
                 lazy-nvim
             ];
