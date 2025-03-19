@@ -1,18 +1,18 @@
 vim.g.mapleader = " "
-local opts = {noremap = true}
+local opts = { noremap = true }
 local function nmap(key, map, desc)
-  if desc then
-    opts.desc = desc
-  end
-  vim.keymap.set('n', key, map, opts)
+    if desc then
+        opts.desc = desc
+    end
+    vim.keymap.set('n', key, map, opts)
 end
 
 local function toggle_virtual_text()
-  if vim.diagnostic.config().virtual_text == true then
-    vim.diagnostic.config({virtual_text = false})
-  else
-    vim.diagnostic.config({virtual_text = true})
-  end
+    if vim.diagnostic.config().virtual_text == true then
+        vim.diagnostic.config({ virtual_text = false })
+    else
+        vim.diagnostic.config({ virtual_text = true })
+    end
 end
 
 --- Built-in ---
@@ -30,20 +30,11 @@ nmap('<leader>qf', ':Telescope quickfix<CR>')
 
 --- LSP ---
 nmap('<leader>fc', ':ClangdSwitchSourceHeader')
-nmap('gd' ,':lua vim.lsp.buf.definition()<cr>')
+nmap('gd', ':lua vim.lsp.buf.definition()<cr>')
 nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
 nmap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
 nmap("<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>")
-nmap("<leader>vo", toggle_virtual_text)
-
---- CMake Tools ---
-nmap('<leader>cm', ':CMakeRun<CR>')
-
---- DAP (Debugger) ---
-nmap('<leader>di', ':CMakeDebug<CR>')
-nmap('<leader>db', ':lua require("dap").toggle_breakpoint()<CR>')
-nmap('<leader>dc', ':lua require("dap").continue()<CR>')
-nmap('<leader>ds', ':lua require("dap").step_over()<CR>')
+nmap("<leader>tv", toggle_virtual_text)
 
 --- DB ---
 nmap('<leader>dad', ':DBUIToggle<CR>')
@@ -51,7 +42,6 @@ nmap('<leader>dad', ':DBUIToggle<CR>')
 -- Oil
 nmap('-', '<CMD>Oil<CR>')
 
--- Trouble 
-nmap('<leader>tt', ':ToggleTerm<CR>')
-nmap('<leader>ti', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR><CR>')
+-- Trouble
+nmap('<leader>tt', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR><CR>')
 nmap('<leader>ts', ':Trouble symbols toggle pinned=true win.relative=win win.position=right<CR>')

@@ -6,7 +6,6 @@
     asm-lsp
     cmake-language-server
     arduino-language-server
-    vscode-extensions.vue.volar
     tailwindcss-language-server
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
@@ -17,9 +16,17 @@
     lua-language-server
     python312Packages.python-lsp-server
     ols
+    bash-language-server
+    shellcheck
+    vue-language-server
+    matlab-language-server
+    java-language-server
+    wasm-language-tools
+    texlab
+    clang-tools
 
     # Formatter
     alejandra
+
 ] ++ (with pkgs; [
-    vscode-extensions.vue.volar
 ])
