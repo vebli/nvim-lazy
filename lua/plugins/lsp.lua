@@ -1,7 +1,6 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        event = { "BufReadPre", "BufNewFile", },
         dependencies = { "hrsh7th/cmp-nvim-lsp" },
         config = function()
             local lspconfig = require("lspconfig")
@@ -70,7 +69,13 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
-        dependencies = { "onsails/lspkind.nvim" },
+        dependencies = {
+            "onsails/lspkind.nvim",
+            "kdheepak/cmp-latex-symbols",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp-document-symbol",
+        },
         config = function()
             local lspkind = require('lspkind')
             local cmp = require("cmp")
@@ -108,13 +113,16 @@ return {
                 },
 
                 sources    = cmp.config.sources({
+                    { name = 'path' },
+                    { name = 'latex_symbols' },
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'vim-dadbod-completion' },
+                    { name = 'nvim_lsp_document_symbol' }
                 }, {
                     { name = 'buffer' },
                 }),
-                
+
                 mapping    = cmp.mapping.preset.insert({
                     ['<C-k>'] = cmp.mapping.select_prev_item(),
                     ['<C-j>'] = cmp.mapping.select_next_item(),
