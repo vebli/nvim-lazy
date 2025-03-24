@@ -1,8 +1,8 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile", },
         dependencies = { "hrsh7th/cmp-nvim-lsp" },
-        -- event = { "BufReadPre", "BufNewFile", },
         config = function()
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -28,6 +28,7 @@ return {
                 'java_language_server',
                 'vuels',
                 'wasm_language_tools',
+                'glsl_analyzer',
             }
             for _, server in ipairs(servers) do
                 lspconfig[server].setup {
@@ -70,7 +71,6 @@ return {
     {
         "hrsh7th/nvim-cmp",
         dependencies = { "onsails/lspkind.nvim" },
-        -- event = { "BufReadPre", "BufNewFile", },
         config = function()
             local lspkind = require('lspkind')
             local cmp = require("cmp")

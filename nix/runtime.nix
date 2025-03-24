@@ -24,6 +24,7 @@
     wasm-language-tools
     texlab
     clang-tools
+    glsl_analyzer
 
     # Formatter
     alejandra
