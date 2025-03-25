@@ -74,7 +74,6 @@ return {
             "kdheepak/cmp-latex-symbols",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp-document-symbol",
         },
         config = function()
             local lspkind = require('lspkind')
@@ -118,7 +117,6 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'vim-dadbod-completion' },
-                    { name = 'nvim_lsp_document_symbol' }
                 }, {
                     { name = 'buffer' },
                 }),
