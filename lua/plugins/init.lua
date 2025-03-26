@@ -3,7 +3,7 @@ require("lazy").setup({
     -- install = { missing = false, },
     defaults = { version = "*" },
     spec = {
-        { import = "plugins.theme" },
+        { import = "plugins.rose-pine" },
         { import = "plugins.telescope" },
         { import = "plugins.web-devicons" },
         { import = "plugins.lualine" },
@@ -23,8 +23,6 @@ require("lazy").setup({
         { import = "plugins.surround" },
         { import = "plugins.dadbod" },
         { import = "plugins.rainbow-delimiters" }
-        -- { import = "plugins.mason" },
-        -- { import = "plugins.which-key" },
     }
 
 })
