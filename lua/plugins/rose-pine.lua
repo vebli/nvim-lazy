@@ -39,7 +39,7 @@ return {
             "Float",
         })
         set_highlight_groups({ fg = "Pine", bold = true }, {
-            "Function", "@function", "@function.builtin",
+            "Function", "@function", "@function.builtin", "@function.macro",
             "@function.method", "@lsp.type.method",
             "@constructor",
             "@lsp.type.class", "Structure"
@@ -53,7 +53,7 @@ return {
         set_highlight_groups({ fg = "Iris", bold = false }, {
             "PreProc",
             "Define",
-            "Include",
+            "Include", "@keyword.import",
             "Macro",
             "@constant.macro",
             "@lsp.type.macro",

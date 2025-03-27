@@ -1,4 +1,17 @@
-{pkgs}:{
+{pkgs}:
+let 
+    customRC = (import ./nvim.nix{inherit pkgs;}).customRC;
+in
+{
+    neovim = pkgs.neovim.override
+    {
+        configure = {
+            inherit customRC;
+            packages.all.start = with pkgs.vimPlugins; [
+                lazy-nvim
+            ];
+        };
+    };
     vimPlugins = pkgs.vimPlugins // {
         # ouroboros-nvim = pkgs.vimUtils.buildVimPlugin {
         #     name = "Ouroborus-nvim";
