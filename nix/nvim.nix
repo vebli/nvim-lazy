@@ -15,7 +15,6 @@ let
             require("keymaps")
             require("options")
             require("plugins.init")
-            vim.cmd("colorscheme minimal")
     '';
 in
 {
