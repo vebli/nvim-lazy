@@ -15,6 +15,8 @@ let
             require("keymaps")
             require("options")
             require("plugins.init")
+            vim.opt.rtp:prepend('${nvimRtp}/lua/') -- Needs to be set after lazy
+            vim.cmd('colorscheme minimal')
     '';
 in
 {
