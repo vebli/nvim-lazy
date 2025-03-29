@@ -10,7 +10,6 @@
     vscode-langservers-extracted
     nodePackages_latest.typescript-language-server
     sqls
-    nil
     nixd
     vscode-extensions.rust-lang.rust-analyzer
     lua-language-server

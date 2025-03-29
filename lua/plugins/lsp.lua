@@ -10,7 +10,6 @@ return {
                 'lua_ls',
                 'pylsp',
                 'gopls',
-                'nil_ls',
                 'html',
                 'biome',
                 'cssls',
