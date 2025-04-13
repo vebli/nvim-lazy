@@ -13,7 +13,7 @@
     nixd
     vscode-extensions.rust-lang.rust-analyzer
     lua-language-server
-    python312Packages.python-lsp-server
+    pyright
     ols
     bash-language-server
     shellcheck

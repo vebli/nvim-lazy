@@ -8,17 +8,17 @@ local function set_highlight(opts, groups)
     end
 end
 
-acc1 = "#4FB8CC"
-acc2 = "#806699"
-acc3 = "#669966"
+local acc1 = "#4FB8CC"
+local acc2 = "#806699"
+local acc3 = "#669966"
 
-grey90 = "#f2f2f2"
-grey80 = "#CCCCCC"
-grey70 = "#b3b3b3"
-grey60 = "#999999"
-grey50 = "#808080"
-grey40 = "#666666"
-grey30 = "#4D4D4D"
+local grey90 = "#f2f2f2"
+local grey80 = "#CCCCCC"
+local grey70 = "#b3b3b3"
+local grey60 = "#999999"
+local grey50 = "#808080"
+local grey40 = "#666666"
+local grey30 = "#4D4D4D"
 
 local yellow = "#e8e87d"
 local red = "#b30000"
@@ -28,8 +28,8 @@ local bg_dark = "#1a1825"
 local bg_light = "NvimLightGrey1"
 local text = grey80
 local functions = grey90
-local types = grey60
-local operators = grey80
+local types = grey50
+local operators = types
 local macros = grey60
 
 local strings = acc1

@@ -8,7 +8,7 @@ return {
             local servers = {
                 'texlab',
                 'lua_ls',
-                'pylsp',
+                'pyright',
                 'gopls',
                 'html',
                 'biome',
