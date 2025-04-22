@@ -16,7 +16,10 @@
     eachSystem = nixpkgs.lib.genAttrs (import inputs.nix-systems);
     mkPkgs = system:
       import nixpkgs {
-        config = {allowUnfree = true;};
+        config = {
+            allowUnfree = true;
+            allowBroken = true;
+            };
         inherit system;
         overlays = [
           (super: self: (import ./nix/overlays.nix {pkgs = self;}))

@@ -24,6 +24,7 @@
     texlab
     clang-tools
     glsl_analyzer
+    haskell-language-server
 
     # Formatter
     alejandra

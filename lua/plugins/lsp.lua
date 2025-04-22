@@ -23,6 +23,7 @@ return {
                 'ols',
                 'matlab_ls',
                 'bashls',
+                'hls',
                 'java_language_server',
                 'vuels',
                 'wasm_language_tools',
