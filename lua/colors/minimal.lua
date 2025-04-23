@@ -36,20 +36,23 @@ local strings = acc1
 local numbers = acc1
 local comments = acc3
 
+-- UI
 set_highlight({ fg = text, bg = bg_dark}, { 
     "Normal",
     "Pmenu",
     "NormalFloat",
 })
 
+-- Regular Text
 set_highlight({ fg = text }, {
     "Attribute",
     "Property",
     "Identifier",
-    "DiagnosticUnnecessary"
+    "DiagnosticUnnecessary",
+    "DiagnosticUnderlineInfo"
 })
 
--- ACCENTS
+-- Accents
 set_highlight({ fg = acc2 }, { "Special" })
 set_highlight({ fg = functions, bold = false }, {
     "Function", "@function", "@constructor",
