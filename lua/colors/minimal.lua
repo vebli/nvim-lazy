@@ -35,9 +35,13 @@ local macros = grey60
 local strings = acc1
 local numbers = acc1
 local comments = acc3
+-- Remove annoying underlines
+set_highlight({ underline = false, undercurl = false }, {
+    "DiagnosticUnderlineInfo"
+})
 
 -- UI
-set_highlight({ fg = text, bg = bg_dark}, { 
+set_highlight({ fg = text, bg = bg_dark }, {
     "Normal",
     "Pmenu",
     "NormalFloat",
@@ -49,7 +53,6 @@ set_highlight({ fg = text }, {
     "Property",
     "Identifier",
     "DiagnosticUnnecessary",
-    "DiagnosticUnderlineInfo"
 })
 
 -- Accents
