@@ -6,8 +6,8 @@ return {
             local lspconfig = require("lspconfig")
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
             local servers = {
+                'clangd',
                 'texlab',
-                'lua_ls',
                 'pyright',
                 'gopls',
                 'html',
@@ -35,19 +35,30 @@ return {
                 }
             end
 
-            -- Configure each language server
-            lspconfig.clangd.setup {
-                capabilities = capabilities,
-                cmd = { 'clangd', '--compile-commands-dir=build' },
-                filetypes = { 'c', 'cpp' },
-                root_dir = function() return vim.fn.getcwd() end,
-                on_attach = function(client, bufnr)
-                    -- Set compiler flags
-                    vim.api.nvim_buf_set_option(bufnr, 'makeprg', 'clang\\ -Wall\\ -Wextra\\ -O3\\ %')
-                    vim.api.nvim_buf_set_option(bufnr, 'errorformat',
-                        '%f:%l:%c:\\ %tarning:\\ %m,%f:%l:%c:\\ %trror:\\ %m')
-                end,
+            lspconfig.lua_ls.setup {
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = 'LuaJIT',
+                            -- Setup lua path
+                            path = vim.split(package.path, ';'),
+                        },
+                        diagnostics = {
+                            -- Get the language server to recognize the `vim` global
+                            globals = { 'vim' },
+                        },
+                        workspace = {
+                            -- Make the server aware of Neovim runtime files
+                            library = vim.api.nvim_get_runtime_file("", true),
+                            checkThirdParty = false,
+                        },
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
             }
+
             lspconfig.sqls.setup {
                 capabilities = capabilities,
                 root_dir = function() return vim.fn.getcwd() end,
@@ -65,6 +76,12 @@ return {
                     },
                 },
             }
+            vim.api.nvim_create_autocmd("BufEnter", {
+                pattern = { "*.vert", "*.frag" },
+                callback = function(e)
+                    vim.bo[e.buf].filetype = "glsl"
+                end
+            })
         end
     },
     {
