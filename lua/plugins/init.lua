@@ -23,7 +23,8 @@ require("lazy").setup({
         { import = "plugins.signature" },
         { import = "plugins.surround" },
         { import = "plugins.dadbod" },
-        { import = "plugins.rainbow-delimiters" }
+        { import = "plugins.rainbow-delimiters" },
+        { import = "plugins.hardtime"}
     }
 
 })
