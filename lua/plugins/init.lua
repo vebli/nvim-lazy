@@ -24,7 +24,7 @@ require("lazy").setup({
         { import = "plugins.surround" },
         { import = "plugins.dadbod" },
         { import = "plugins.rainbow-delimiters" },
-        { import = "plugins.hardtime"}
+        { import = "plugins.lspsaga"},
     }
 
 })

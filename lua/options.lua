@@ -30,6 +30,7 @@ opt.mouse = "a"
 vim.o.spell = true
 vim.o.spelllang = "en,de"
 
+
 -- Numbers
 opt.number = true
 opt.numberwidth = 2
