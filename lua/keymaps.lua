@@ -15,9 +15,26 @@ local function toggle_virtual_text()
     end
 end
 
+local function toggle_quick_fix_list()
+  local is_open = false
+  for _, win in ipairs(vim.fn.getwininfo()) do
+    if win.quickfix == 1 then
+      is_open = true
+      break
+    end
+  end
+  if is_open then
+    vim.cmd('cclose')
+  else
+    vim.cmd('copen')
+  end
+end
+
 vim.keymap.set('n', 'gs', '<Nop>') -- Freezes nvim (intentionally)
 
 --- Built-in ---
+
+-- buffers
 nmap('<leader>bn', ':bnext<CR>')
 nmap('<leader>bp', ':bprevious<CR>')
 nmap('<leader>nh', ':noh<CR>')
@@ -28,25 +45,41 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
+-- LSP 
+nmap('<leader>fc', ':ClangdSwitchSourceHeader')
+nmap('gd', vim.lsp.buf.definition)
+nmap('<leader>rn', vim.lsp.buf.rename)
+nmap('K', vim.lsp.buf.hover)
+nmap("<leader>lf", vim.lsp.buf.format)
+nmap("<leader>ln", vim.diagnostic.goto_next)
+nmap("<leader>lp", vim.diagnostic.goto_prev)
+nmap("<leader>tv", toggle_virtual_text)
+
+-- quickfix
+nmap("<leader>cn", ":cnext<CR>")
+nmap("<leader>cp", ":cprev<CR>")
+nmap("<leader>cc", toggle_quick_fix_list)
+vim.keymap.set("n", "lr", function() -- vim.lsp.buf.references but without stealing focus
+	local win = vim.api.nvim_get_current_win()
+	vim.lsp.buf.references(nil, {
+		on_list = function(items, title, context)
+			vim.fn.setqflist({}, " ", items)
+			vim.cmd.copen()
+			vim.api.nvim_set_current_win(win)
+		end,
+	})
+end)
+
 --- Telescope ---
 nmap('<leader>ff', ':Telescope find_files<CR>')
 nmap('<leader>fg', ':Telescope git_files<CR>')
-nmap('<leader>bm', ':Telescope buffers<CR>')
-nmap('<leader>qf', ':Telescope quickfix<CR>')
+nmap('<leader>fl', ':Telescope live_grep<CR>')
+nmap('<leader>f?', ':Telescope help_tags<CR>')
+nmap('<leader>fb', ':Telescope buffers<CR>')
 
-
-
---- LSP ---
-nmap('<leader>fc', ':ClangdSwitchSourceHeader')
-nmap('gd', ':lua vim.lsp.buf.definition()<cr>')
-nmap('<leader>rn', ':lua vim.lsp.buf.rename()<cr>')
-nmap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
-nmap("<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>")
-nmap("<leader>tv", toggle_virtual_text)
 
 --- Lspsaga
 -- nmap("<leader>ld", ":Lspsaga show_buf_diagnostics ++normal<CR>")
-nmap("<leader>lr", ":Lspsaga finder<CR>")
 nmap("<leader>la", ":Lspsaga code_action<CR>")
 nmap("<leader>lfo", ":Lspsaga outgoing_calls<CR>")
 nmap("<leader>lfi", ":Lspsaga incoming_calls<CR>")
@@ -60,5 +93,5 @@ nmap('<leader>dad', ':DBUIToggle<CR>')
 nmap('-', '<CMD>Oil<CR>')
 
 -- Trouble
-nmap('<leader>tt', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR><CR>')
+nmap('<leader>tt', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR>')
 -- nmap('<leader>ts', ':Trouble symbols toggle pinned=true win.relative=win win.position=right win.size=0.25<CR>')

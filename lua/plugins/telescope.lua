@@ -4,7 +4,7 @@ return {
   cmd = "Telescope",
   opts = {
       defauls = {
-        file_ignore_patterns = {"build", "node_modules"}
+        file_ignore_patterns = {}
       }
   }
 }
