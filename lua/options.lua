@@ -35,7 +35,7 @@ vim.o.spelllang = "en,de"
 vim.diagnostic.config({
     float = { border = "rounded"}
 })
-
+vim.o.winborder = "rounded"
 -- Numbers
 opt.number = true
 opt.numberwidth = 2
