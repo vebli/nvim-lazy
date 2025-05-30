@@ -46,7 +46,7 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
 -- LSP 
-nmap('<leader>fc', ':ClangdSwitchSourceHeader')
+nmap('<leader>fc', ':ClangdSwitchSourceHeader<CR>')
 nmap('gd', vim.lsp.buf.definition)
 nmap('<leader>rn', vim.lsp.buf.rename)
 nmap('K', vim.lsp.buf.hover)
