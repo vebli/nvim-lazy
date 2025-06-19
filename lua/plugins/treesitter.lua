@@ -4,7 +4,7 @@ return {
     event = { "BufReadPost", "BufNewFile" }, -- Lazy-load on file open
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = "all",
+            ensure_installed = "",
             highlight = {
                 enable = false,
                 additional_vim_regex_highlighting = false,

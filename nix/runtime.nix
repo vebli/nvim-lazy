@@ -25,6 +25,7 @@
     clang-tools
     glsl_analyzer
     haskell-language-server
+    harper
 
     # Formatter
     alejandra
