@@ -25,6 +25,7 @@ require("lazy").setup({
         { import = "plugins.dadbod" },
         { import = "plugins.rainbow-delimiters" },
         { import = "plugins.lspsaga"},
+        { import = "plugins.markdown-preview"},
     }
 
 })

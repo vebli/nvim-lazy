@@ -5,6 +5,9 @@ return {
     local ls = require("luasnip")
     local lsl = require("luasnip.loaders")
     local lsll = require("luasnip.loaders.from_lua")
+    ls.config.set_config({
+        enable_autosnippets = true,
+    })
 
     lsll.lazy_load({ paths = "~/.config/nvim/lua/snippets" })
 

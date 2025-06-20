@@ -1,6 +1,7 @@
 {pkgs, pkgs-unstable, ...}: with pkgs-unstable; [
     curl #for godbolt
     fzf
+    nodejs
 
     # LSP
     asm-lsp
