@@ -28,7 +28,8 @@ return {
                 'vuels',
                 'wasm_language_tools',
                 'glsl_analyzer',
-                'harper_ls'
+                'harper_ls',
+                'dartls'
             }
             for _, server in ipairs(servers) do
                 lspconfig[server].setup {

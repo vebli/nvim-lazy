@@ -27,6 +27,7 @@
     glsl_analyzer
     haskell-language-server
     harper
+    dart
 
     # Formatter
     alejandra
