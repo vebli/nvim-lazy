@@ -26,6 +26,7 @@ require("lazy").setup({
         { import = "plugins.rainbow-delimiters" },
         { import = "plugins.lspsaga"},
         { import = "plugins.markdown-preview"},
+        { import = "plugins.flutter-tools"},
     }
 
 })
