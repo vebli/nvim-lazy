@@ -54,6 +54,7 @@ nmap("<leader>lf", vim.lsp.buf.format)
 nmap("<leader>ln", vim.diagnostic.goto_next)
 nmap("<leader>lp", vim.diagnostic.goto_prev)
 nmap("<leader>tv", toggle_virtual_text)
+nmap("<leader>la", vim.lsp.buf.code_action)
 
 -- quickfix
 nmap("<leader>cn", ":cnext<CR>")
@@ -79,8 +80,6 @@ nmap('<leader>fb', ':Telescope buffers<CR>')
 
 
 --- Lspsaga
--- nmap("<leader>ld", ":Lspsaga show_buf_diagnostics ++normal<CR>")
-nmap("<leader>la", ":Lspsaga code_action<CR>")
 nmap("<leader>lfo", ":Lspsaga outgoing_calls<CR>")
 nmap("<leader>lfi", ":Lspsaga incoming_calls<CR>")
 nmap("<leader>ls", ":Lspsaga outline<CR>")
@@ -93,5 +92,5 @@ nmap('<leader>dad', ':DBUIToggle<CR>')
 nmap('-', '<CMD>Oil<CR>')
 
 -- Trouble
-nmap('<leader>tt', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR>')
+nmap('<leader>tt', ':Trouble diagnostics toggle pinned=true win.relative=win win.position=bottom<CR><CR>')
 -- nmap('<leader>ts', ':Trouble symbols toggle pinned=true win.relative=win win.position=right win.size=0.25<CR>')

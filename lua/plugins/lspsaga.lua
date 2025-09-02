@@ -13,7 +13,12 @@ return {
             lightbulb = {
                 virtual_text = false,
             },
-
+            code_action = {
+                enable = false,
+            },
+            rename = {
+                enable = false,
+            },
         })
     end,
     dependencies = {
