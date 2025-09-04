@@ -1,5 +1,8 @@
+vim.g.colors_name = 'minimal'
 vim.cmd("highlight clear")
+vim.cmd("syntax reset")
 vim.opt.termguicolors = true
+vim.o.background = 'dark';
 
 
 local function set_highlight(opts, groups)
@@ -35,6 +38,8 @@ local macros = grey60
 local strings = acc1
 local numbers = acc1
 local comments = acc3
+
+
 -- Remove annoying underlines
 set_highlight({ underline = false, undercurl = false }, {
     "DiagnosticUnderlineInfo"
