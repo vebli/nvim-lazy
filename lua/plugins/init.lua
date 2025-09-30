@@ -3,7 +3,6 @@ require("lazy").setup({
     -- install = { missing = false, },
     defaults = { version = "*" },
     spec = {
-        -- { import = "plugins.minimal" },
         { import = "plugins.rose-pine" },
         { import = "plugins.telescope" },
         { import = "plugins.web-devicons" },
@@ -28,6 +27,5 @@ require("lazy").setup({
         { import = "plugins.markdown-preview"},
         { import = "plugins.flutter-tools"},
     }
-
 })
 

@@ -60,7 +60,17 @@ return {
                     },
                 },
             }
-
+            lspconfig.clangd.setup {
+                capabilities = capabilities,
+                cmd = { 'clangd', '--compile-commands-dir=build' },
+                filetypes = { 'c', 'cpp' },
+                root_dir = function() return vim.fn.getcwd() end,
+                on_attach = function(client, bufnr)
+                    -- Set compiler flags
+                    vim.api.nvim_set_option_value('makeprg', 'clang -Wall -Wextra -O3 %', { buf = bufnr })
+                    vim.api.nvim_set_option_value('errorformat', '%f:%l:%c: %tarning: %m,%f:%l:%c: %trror: %m', { buf = bufnr })
+                end,
+            }
             lspconfig.sqls.setup {
                 capabilities = capabilities,
                 root_dir = function() return vim.fn.getcwd() end,
