@@ -2,13 +2,19 @@ return {
     'nvimdev/lspsaga.nvim',
     config = function()
         require('lspsaga').setup({
-            symbol_in_winbar = {
-                enable = false,
+            outline = {
+                auto_preview = false,
+                keys = {
+                    toggle_or_jump= '<CR>',
+                },
             },
             finder = {
                 keys = {
                     toggle_or_open = '<CR>',
                 },
+            },
+            symbol_in_winbar = {
+                enable = false,
             },
             lightbulb = {
                 virtual_text = false,
