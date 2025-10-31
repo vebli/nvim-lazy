@@ -29,6 +29,14 @@
     harper
     dart
 
+    #Debugger
+    gdb
+    # gcc-arm-embedded
+    # python312Packages.debugpy
+    # python312Packages.python
+
+    
+
     # Formatter
     alejandra
 

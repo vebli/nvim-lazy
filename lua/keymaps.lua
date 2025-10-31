@@ -56,6 +56,14 @@ nmap("<leader>lp", vim.diagnostic.goto_prev)
 nmap("<leader>tv", toggle_virtual_text)
 nmap("<leader>la", vim.lsp.buf.code_action)
 
+-- DAP
+nmap("<leader>dc", ':DapContinue<CR>')
+nmap("<leader>ds", ':DapStepOver<CR>')
+nmap("<leader>di", ':DapStepInto<CR>')
+nmap("<leader>do", ':DapStepOut<CR>')
+nmap("<leader>db", ':DapToggleBreakpoint<CR>')
+nmap("<leader>dt", ':DapToggleRepl<CR>')
+
 -- quickfix
 nmap("<leader>cn", ":cnext<CR>")
 nmap("<leader>cp", ":cprev<CR>")
@@ -71,7 +79,7 @@ vim.keymap.set("n", "lr", function() -- vim.lsp.buf.references but without steal
 	})
 end)
 
---- Telescope ---
+-- Telescope 
 nmap('<leader>ff', ':Telescope find_files<CR>')
 nmap('<leader>fg', ':Telescope git_files<CR>')
 nmap('<leader>fl', ':Telescope live_grep<CR>')
@@ -79,13 +87,13 @@ nmap('<leader>f?', ':Telescope help_tags<CR>')
 nmap('<leader>fb', ':Telescope buffers<CR>')
 
 
---- Lspsaga
+-- Lspsaga 
 nmap("<leader>lfo", ":Lspsaga outgoing_calls<CR>")
 nmap("<leader>lfi", ":Lspsaga incoming_calls<CR>")
 nmap("<leader>ls", ":Lspsaga outline<CR>")
 
 
---- DB ---
+-- DB 
 nmap('<leader>dad', ':DBUIToggle<CR>')
 
 -- Oil

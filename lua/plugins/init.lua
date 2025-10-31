@@ -15,6 +15,8 @@ require("lazy").setup({
         { import = "plugins.tmux" },
         { import = "plugins.autopairs" },
         { import = "plugins.lsp" },
+        { import = "plugins.lspsaga"},
+        { import = "plugins.dap"},
         { import = "plugins.otter" },
         { import = "plugins.highlight-color" },
         { import = "plugins.trouble" },
@@ -23,7 +25,6 @@ require("lazy").setup({
         { import = "plugins.surround" },
         { import = "plugins.dadbod" },
         { import = "plugins.rainbow-delimiters" },
-        { import = "plugins.lspsaga"},
         { import = "plugins.markdown-preview"},
         { import = "plugins.flutter-tools"},
     }
