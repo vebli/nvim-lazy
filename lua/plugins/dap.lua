@@ -36,6 +36,18 @@ return {
                     end,
                     cwd = '${workspaceFolder}'
                 },
+                {
+                    name = 'Attach to gdbserver',
+                    type = 'gdb',
+                    request = 'attach',
+                    program = function()
+                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                    end,
+                    target = function()
+                        return vim.fn.input('Connection: ')
+                    end,
+                    cwd = '${workspaceFolder}'
+                }
             }
             dap.configurations.cpp = dap.configurations.c
             dap.configurations.rust = dap.configurations.c
