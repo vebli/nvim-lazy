@@ -27,6 +27,9 @@ require("lazy").setup({
         { import = "plugins.rainbow-delimiters" },
         { import = "plugins.markdown-preview"},
         { import = "plugins.flutter-tools"},
+        { import = "plugins.vim-jack-in"},
+        { import = "plugins.conjure"},
+        { import = "plugins.vim-sexp"},
     }
 })
 

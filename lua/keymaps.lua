@@ -34,6 +34,7 @@ vim.keymap.set('n', 'gs', '<Nop>') -- Freezes nvim (intentionally)
 
 --- Built-in ---
 
+
 -- buffers
 nmap('<leader>bn', ':bnext<CR>')
 nmap('<leader>bp', ':bprevious<CR>')
@@ -55,6 +56,11 @@ nmap("<leader>ln", vim.diagnostic.goto_next)
 nmap("<leader>lp", vim.diagnostic.goto_prev)
 nmap("<leader>tv", toggle_virtual_text)
 nmap("<leader>la", vim.lsp.buf.code_action)
+
+-- vim-sexp
+nmap("gt", "<Plug>(sexp_swap_element_forward)")
+nmap("gT", "<Plug>(sexp_swap_element_backward)")
+
 
 -- DAP
 nmap("<leader>dc", ':DapContinue<CR>')
