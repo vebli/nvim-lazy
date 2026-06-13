@@ -9,7 +9,7 @@
     arduino-language-server
     tailwindcss-language-server
     vscode-langservers-extracted
-    nodePackages_latest.typescript-language-server
+    typescript-language-server
     sqls
     nixd
     vscode-extensions.rust-lang.rust-analyzer
